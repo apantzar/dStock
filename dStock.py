@@ -13,28 +13,28 @@ from tensorflow.keras.layers import Dense, Dropout, LSTM
 ans = True
 while ans:
     print("""
-    1. FB
-    2. APPLE
-    3. TESLA
-    4. Exit/Quit
+    a. FB
+    b. APPLE
+    c. TESLA
+    d. Exit/Quit
     """)
     ans = raw_input("Select a company to predict: ")
-    if ans == "1":
+    if ans == "a":
         company = 'FB'
         break
-    elif ans == "2":
+    elif ans == "b":
         company = 'AAPL'
         break
-    elif ans == "3":
+    elif ans == "c":
         company = 'TSLA'
         break
-    elif ans == "4":
+    elif ans == "d":
         print("\n Goodbye")
         exit(-1)
     elif ans != "":
         print("\n Not Valid Choice Try again")
 
-company = 'FB'
+
 start = dt.datetime(2012, 1, 1)
 end = dt.datetime(2021, 1, 1)
 
@@ -104,7 +104,7 @@ predicted_prices = scaler.inverse_transform(predicted_prices)
 
 plt.plot(actual_prices, color="blue", label=f"Actual Price")
 plt.plot(predicted_prices, color="green", label=f"Predicted Price")
-plt.title(f"{company} Price")
+plt.title(f"{company} Price [OLD]")
 plt.xlabel('Time')
 plt.ylabel('Stock')
 plt.legend()
