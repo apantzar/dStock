@@ -44,7 +44,7 @@ data = web.DataReader(company, 'yahoo', start, end)
 scaler = MinMaxScaler(feature_range=(0, 1))
 scaled_data = scaler.fit_transform(data['Close'].values.reshape(-1, 1))
 
-prediction_days = 80
+prediction_days = 100
 
 x_train = []
 y_train = []
@@ -112,10 +112,10 @@ plt.show()
 
 # Predict Next
 
-real_data = [model_inputs[len(model_inputs) + 1 - prediction_days:len(model_inputs + 1), 0]]
+real_data = [model_inputs[len(model_inputs) + 90 - prediction_days:len(model_inputs + 90), 0]]
 real_data = np.array(real_data)
 real_data = np.reshape(real_data, (real_data.shape[0], real_data.shape[1], 1))
 
 prediction = model.predict(real_data)
 prediction = scaler.inverse_transform(prediction)
-print(f"Prediction: {prediction}")
+print(f"Three months price prediction: {prediction}")
