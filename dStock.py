@@ -36,7 +36,7 @@ while ans:
 
 
 start = dt.datetime(2012, 1, 1)
-end = dt.datetime(2021, 1, 1)
+end = dt.datetime(2021, 9, 1)
 
 data = web.DataReader(company, 'yahoo', start, end)
 
@@ -118,4 +118,4 @@ real_data = np.reshape(real_data, (real_data.shape[0], real_data.shape[1], 1))
 
 prediction = model.predict(real_data)
 prediction = scaler.inverse_transform(prediction)
-print(f"Three months price prediction: {prediction}")
+print(f"\n\nThree months price prediction: {prediction}")
