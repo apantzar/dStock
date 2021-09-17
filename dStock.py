@@ -16,9 +16,9 @@ while ans:
     1. FB
     2. APPLE
     3. TESLA
-    4.Exit/Quit
+    4. Exit/Quit
     """)
-    ans = raw_input("What would you like to do? ")
+    ans = raw_input("Select a company to predict: ")
     if ans == "1":
         company = 'FB'
         break
