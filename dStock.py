@@ -4,19 +4,24 @@ import pandas as pd
 import pandas_datareader as web
 import datetime as dt
 
+print("🄳🅂🅃🄾🄲🄺...")
+
 from past.builtins import raw_input
 from sklearn.preprocessing import MinMaxScaler
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Dropout, LSTM
 
+
 # Loading data
 ans = True
 while ans:
     print("""
+=========[Menu]=========
     a. FB
     b. APPLE
     c. TESLA
     d. Exit/Quit
+========================
     """)
     ans = raw_input("Select a company to predict: ")
     if ans == "a":
